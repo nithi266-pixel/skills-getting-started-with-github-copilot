@@ -1,3 +1,11 @@
+import os
+import sys
+
+# Ensure src is on sys.path so "from app import app" works when running pytest from repo root
+TEST_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+if TEST_ROOT not in sys.path:
+    sys.path.insert(0, TEST_ROOT)
+
 from fastapi.testclient import TestClient
 import pytest
 import httpx
