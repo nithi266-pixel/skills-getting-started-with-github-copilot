@@ -21,7 +21,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const spotsLeft = details.max_participants - details.participants.length;
 
         const participantsList = details.participants
-          .map(participant => `<li>${participant}</li>`)
+          .map(
+            participant =>
+              `<div class="participant-row">
+                <span class="participant-email">${participant}</span>
+                <span class="delete-participant" title="Remove">&times;</span>
+              </div>`
+          )
           .join("");
 
         activityCard.innerHTML = `
@@ -30,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <p><strong>Schedule:</strong> ${details.schedule}</p>
           <p><strong>Availability:</strong> ${spotsLeft} spots left</p>
           <p><strong>Participants:</strong></p>
-          <ul>${participantsList}</ul>
+          <div class="participants-list">${participantsList}</div>
         `;
 
         activitiesList.appendChild(activityCard);

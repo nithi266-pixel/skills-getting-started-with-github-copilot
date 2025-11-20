@@ -72,7 +72,6 @@ section h3 {
 
 .activity-card p {
   margin-bottom: 8px;
-  color:red
 }
 
 .activity-card ul {
@@ -171,24 +170,28 @@ footer {
 }
 
 .participants-list {
-  list-style-type: none;
   padding: 0;
 }
 
-.participants-list li {
-  margin-bottom: 15px;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background-color: #f9f9f9;
+.participant-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
 }
 
-.participants-list li h4 {
-  margin: 0 0 5px;
-  color: #0066cc;
-}
-
-.participants-list li p {
-  margin: 0;
+.participant-email {
+  flex: 1;
   color: #555;
+}
+
+.delete-participant {
+  color: #c62828;
+  cursor: pointer;
+  font-size: 18px;
+  margin-left: 10px;
+  transition: color 0.2s;
+}
+
+.delete-participant:hover {
+  color: #b71c1c;
 }
